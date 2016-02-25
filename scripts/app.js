@@ -13,6 +13,12 @@ app.config(function($stateProvider, $urlRouterProvider){
 			templateUrl: 'views/home.html',
 			controller: 'HomeController',
 			controllerAs: 'home'
+		})
+		.state('signup',{
+			url: '/signup',
+			templateUrl: 'views/signup.html',
+			controller: 'SignupController',
+			controllerAs: 'signup'
 		});
 
 	$urlRouterProvider.otherwise('/home');

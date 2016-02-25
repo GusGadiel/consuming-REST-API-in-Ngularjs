@@ -3,6 +3,7 @@
 app.factory('HomeFactory', function($http){
 
 	var url = 'http://jsonplaceholder.typicode.com/users';
+	var path = 'https://forshare-api.herokuapp.com/api/signup';
 
 	var HomeFactory = {
 
@@ -15,7 +16,15 @@ app.factory('HomeFactory', function($http){
 			})
 		},
 
-		createUsers: function(){
+		createUser: function(user){
+
+			return $http.post(path, user).success(function(data){
+				return data;
+			})
+			.error(function(err){
+				console.log(err)
+			})
+
 
 		}
 
